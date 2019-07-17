@@ -5,7 +5,6 @@ import re
 import string
 import json
 from pymongo import MongoClient
-from bs4 import BeautifulSoup
 
 
 client = MongoClient('localhost', 27017)
@@ -33,7 +32,6 @@ for x in range (0, y):
 	A = json.loads(htmltext)[x]['hadodds']['A'][4:]
 	H = json.loads(htmltext)[x]['hadodds']['H'][4:]
 	result = fb.odds.update({"matchIDinofficial": matchIDinofficial}, {"$set": {"matchDate": matchDate, "awayTeam": awayTeam, "homeTeam": homeTeam, "H": H, "D": D, "A": A, "flag": 'odd'}}, upsert=True )
-	print D
 
 
 # database = fb

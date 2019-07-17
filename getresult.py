@@ -28,9 +28,16 @@ for i in range (0, z):
 	matchDate = am["matches"][i]["matchDate"]
 	h = am["matches"][i]["accumulatedscore"][1]["home"]	
 	a = am["matches"][i]["accumulatedscore"][1]["away"]
+	if (h>a):
+		whowin = h
+	elseif (a>h):
+		whowin = a
+	else
+		whowin =d
+	print h,a,whowin
 
 
-	result = fb.odds.update({"matchIDinofficial": matchIDinofficial}, {"$set": {"matchDate": matchDate, "awayTeam": awayTeam, "homeTeam": homeTeam, "H": H, "D": D, "A": A, "flag": 'odd'}}, upsert=True )
+	result = fb.odds.update({"matchIDinofficial": matchIDinofficial}, {"$set": {"win": win, "win_odd": [win].odd "flag": 'odd'}}, upsert=True )
 	print D
 
 
