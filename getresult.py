@@ -42,7 +42,7 @@ for i in range (0, z):
 		whowin = "D"
 	print h,a,whowin
 	winodd = fb.odds.find_one({"matchIDinofficial" : matchIDinofficial},{"_id": 0, whowin: 1})[whowin]
-	result = fb.odds.update({"matchIDinofficial": matchIDinofficial}, {"$set": {"win": whowin, "win_odd": winodd "flag": 'result'}}, upsert=True )
+	result = fb.odds.update({"matchIDinofficial": matchIDinofficial}, {"$set": {"win": whowin, "win_odd": winodd, "flag": 'result'}}, upsert=True )
 	#print D
 
 
