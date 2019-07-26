@@ -24,7 +24,7 @@ def connection(tries=0):
 	try:
 		htmltext = urllib2.urlopen(link).read()
 		y = len(json.loads(htmltext))
-		logging.info("getresult connection success")
+		logging.info("[getodd] connection success")
 		return(htmltext,y)
 	except Exception:
 		logging.info("tries=%s", tries)
@@ -32,7 +32,7 @@ def connection(tries=0):
 		if tries < sys.getrecursionlimit():
 				return connection(tries+1)
 		else:
-			logging.info("finally connection failed")
+			logging.info("[getodd] finally connection failed")
 			exit()
 
 
